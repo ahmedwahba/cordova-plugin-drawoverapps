@@ -34,7 +34,7 @@ import org.apache.cordova.overApps.GeneralUtils.KeyDispatchLayout;
 import java.util.Date;
 
 /**
- * Created by Mohamed Sayed on 1/14/2017.
+ * Created by Mohamed Sayed .
  */
 
  public class OverAppsService extends Service {
