@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-drawOverApps",
   "version": "1.0.0",
-  "description": "Android Cordova Plugin for SMS Receiving",
+  "description": "Android Cordova Plugin that uses draw over all apps feasure to display a Web view",
   "cordova": {
     "id": "cordova-plugin-drawOverApps",
     "platforms": [
@@ -10,12 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmedwahba/cordova-plugin-sms-receiver.git"
+    "url": "git+https://github.com/ahmedwahba/cordova-plugin-drawOverApps.git"
   },
   "keywords": [
     "cordova",
-    "sms",
-    "receiver",
+    "draw over apps",
+    "over all apps",
+    "draw over all",
     "ecosystem:cordova",
     "cordova-android"
   ]
