@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-drawOverApps",
+  "version": "1.0.0",
+  "description": "Android Cordova Plugin for SMS Receiving",
+  "cordova": {
+    "id": "cordova-plugin-drawOverApps",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedwahba/cordova-plugin-sms-receiver.git"
+  },
+  "keywords": [
+    "cordova",
+    "sms",
+    "receiver",
+    "ecosystem:cordova",
+    "cordova-android"
+  ]
+}
