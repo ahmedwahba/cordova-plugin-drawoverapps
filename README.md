@@ -29,6 +29,9 @@ This to check draw-over-apps permession and open system permission window to be 
              console.log(msg);
       });
 
+<img src="shots/permission.png" style="width:360px;" /><img src="shots/permission2.png" style="width:360px;" />
+
+
 
 ### window.overApps.startOverApp
 
