@@ -29,7 +29,9 @@ This to check draw-over-apps permession and open system permission window to be 
              console.log(msg);
       });
 
-<img src="shots/permission.png" style="width:360px;" /><img src="shots/permission2.png" style="width:360px;" />
+|                                    |                                     |
+| ---------------------------------  | --------------------------------    |
+|<img  src="shots/permission.png"  />| <img src="shots/permission2.png"  />|
 
 
 
@@ -65,6 +67,10 @@ otherwise the `failed` is called instead.
      },function (err){
        		console.log(err);
      });
+
+|                                    |                                     |                                    |
+| ---------------------------------  | --------------------------------    | -----------------------------------|
+|<img  src="shots/overAppHead.png" />| <img src="shots/overAppHead1.png"/> |<img src="shots/overAppView.png"  />|
 
 ### window.overApps.closeOverApp
 
