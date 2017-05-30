@@ -2,5 +2,4 @@ apply plugin: 'com.android.application'
 
 dependencies {
       compile 'com.makeramen:roundedimageview:2.2.1'
-      compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
 }
