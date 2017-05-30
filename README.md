@@ -8,7 +8,7 @@ This plugin was successfully tested on Android 5.1 , also on Marshmallow (Androi
 
 ## Install  ##
 
-	cordova plugin add cordova-plugin-drawOverApps
+	cordova plugin add cordova-plugin-drawoverapps
 It is also possible to install via repo url directly 
 
     cordova plugin add https://github.com/ahmedwahba/cordova-plugin-drawOverApps

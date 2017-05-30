@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Android Cordova Plugin that uses draw over all apps feasure to display a Web view",
   "cordova": {
-    "id": "cordova-plugin-drawOverApps",
+    "id": "cordova-plugin-drawoverapps",
     "platforms": [
       "android"
     ]
@@ -14,9 +14,9 @@
   },
   "keywords": [
     "cordova",
-    "draw over apps",
-    "over all apps",
-    "draw over all",
+    "draw-over-apps",
+    "over-all-apps",
+    "draw-over-all",
     "ecosystem:cordova",
     "cordova-android"
   ]
