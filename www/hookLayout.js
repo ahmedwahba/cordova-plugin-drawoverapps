@@ -7,10 +7,10 @@
 //
 
 
-var filestocopy = [{ "plugins/cordova-plugin-drawOverApps/src/android/drawable/close.png": "platforms/android/res/drawable/close.png" },
-                   { "plugins/cordova-plugin-drawOverApps/src/android/layout/service_over_apps_head.xml": "platforms/android/res/layout/service_over_apps_head.xml" },
-                   { "plugins/cordova-plugin-drawOverApps/src/android/layout/service_over_apps_view.xml": "platforms/android/res/layout/service_over_apps_view.xml" },
-                   { "plugins/cordova-plugin-drawOverApps/src/android/layout/key_dispature.xml": "platforms/android/res/layout/key_dispature.xml" } ];
+var filestocopy = [{ "plugins/cordova-plugin-drawoverapps/src/android/drawable/close.png": "platforms/android/res/drawable/close.png" },
+                   { "plugins/cordova-plugin-drawoverapps/src/android/layout/service_over_apps_head.xml": "platforms/android/res/layout/service_over_apps_head.xml" },
+                   { "plugins/cordova-plugin-drawoverapps/src/android/layout/service_over_apps_view.xml": "platforms/android/res/layout/service_over_apps_view.xml" },
+                   { "plugins/cordova-plugin-drawoverapps/src/android/layout/key_dispature.xml": "platforms/android/res/layout/key_dispature.xml" } ];
 
 var fs = require('fs');
 var path = require('path');
