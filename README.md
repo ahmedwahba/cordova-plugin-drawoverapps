@@ -48,6 +48,7 @@ otherwise the `failed` is called instead.
  - **hasHead**: display over app head image which open the view up on click , by default true.
  - **dragToSide**: enable auto move of head to screen side after dragging stop , by default true.
  - **enableBackBtn**: enable hardware back button to close view , by default true.
+ - **enableCloseBtn**: whether to show native close btn or to hide it , by default true
  - **verticalPosition**: set vertical alignment of view , values are top - center - bottom , by default center. 
  - **horizontalPosition**: set horizontal alignment of view , values are right - center - left , by default center.
 
@@ -57,7 +58,8 @@ otherwise the `failed` is called instead.
           path: "test.html",          // file path to display as view content.
           hasHead: true,              // display over app head image which open the view up on click.
           dragToSide: false,          // enable auto move of head to screen side after dragging stop. 
-          enableBackBtn: false,       // enable hardware back button to close view. 
+          enableBackBtn: false,       // enable hardware back button to close view.
+          enableCloseBtn: true,      //  whether to show native close btn or to hide it.
           verticalPosition: "top",    // set vertical alignment of view.
           horizontalPosition: "left"  // set horizontal alignment of view. 
      };
