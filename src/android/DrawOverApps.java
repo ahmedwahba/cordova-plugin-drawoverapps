@@ -114,6 +114,9 @@ public class DrawOverApps extends CordovaPlugin {
 				if (option.has("enableBackBtn")) {
 						serviceParameters.setBoolean(option.getBoolean("enableBackBtn"),"enable_hardware_back");
 				}
+				if (option.has("enableCloseBtn")) {
+						serviceParameters.setBoolean(option.getBoolean("enableCloseBtn"),"enable_close_btn");
+				}
 				if(option.has("verticalPosition")) {
 					  serviceParameters.setString(option.getString("verticalPosition"),"vertical_position");
 				 }

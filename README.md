@@ -74,10 +74,17 @@ otherwise the `failed` is called instead.
 
 ### window.overApps.closeOverApp
 
-It just clear the current active session.
+It closes over app web view , called inside app itself only .
 
-    window.plugins.digits.logout();
+    window.overApps.closeOverApp();
 
+## Control overApp WebView
+
+### Close WebView 
+
+It closes over app webview from one of the webview UI or event  
+
+    OverApps.closeWebView();
 
 
 

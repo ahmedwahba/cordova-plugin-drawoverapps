@@ -2,6 +2,7 @@ package org.apache.cordova.overApps.Services;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
@@ -22,6 +23,7 @@ import android.view.animation.AnimationUtils;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.webkit.JavascriptInterface;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -29,6 +31,8 @@ import android.widget.TextView;
 
 import org.apache.cordova.overApps.Services.ServiceParameters;
 import org.apache.cordova.overApps.GeneralUtils.KeyDispatchLayout;
+
+import com.ionicframework.overapp809848.R;
 
 
 import java.util.Date;
@@ -115,8 +119,6 @@ import java.util.Date;
            Boolean enable_hardware_back = serviceParameters.getBoolean("enable_hardware_back",true);
            showKeyDispatureVisibilty(enable_hardware_back);
          }
-
-
 
          overAppsHead.setOnTouchListener(new View.OnTouchListener() {
              private int initialX;
@@ -248,6 +250,7 @@ import java.util.Date;
      public void webViewSettings() {
 
                webView.setBackgroundColor(Color.TRANSPARENT);
+               webView.addJavascriptInterface(new WebAppInterface(this), "OverApps");
                WebSettings webSettings = webView.getSettings();
                webSettings.setJavaScriptEnabled(true);
                webSettings.setAppCacheMaxSize(10 * 1024 * 1024); // 10MB
@@ -284,7 +287,15 @@ import java.util.Date;
                    Log.e(TAG, "Reflection fail", e);
                }
 
+              Boolean enable_close_btn = serviceParameters.getBoolean("enable_close_btn",true);
+              if (enable_close_btn) {
+                  imgClose.setVisibility(View.VISIBLE);
+              }else {
+                  imgClose.setVisibility(View.GONE);
+              }
+
      }
+
 
      public void goToWall() {
 
@@ -379,4 +390,31 @@ import java.util.Date;
              handler.removeCallbacks(this);
          }
      }
+
+     public class WebAppInterface {
+  		Context mContext;
+
+  		/** Instantiate the interface and set the context */
+  		public WebAppInterface(Context c) {
+  			mContext = c;
+  		}
+
+  		/** Close from inside web view  */
+  		@JavascriptInterface
+  		public void closeWebView() {
+  		    Log.d("TAG","Click");
+          stopSelf();
+          try {
+              if (overAppsView != null) windowManager.removeView(overAppsView);
+              if (overAppsHead != null) windowManager.removeView(overAppsHead);
+          }catch (Exception e){
+              e.printStackTrace();
+          }
+  		}
+
+      @JavascriptInterface
+      public void openApp(){
+        //mContext.startActivity(new Intent(mContext,com.ionicframework.overapp809848.MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+      }
+  	}
  }
