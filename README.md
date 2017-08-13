@@ -47,7 +47,9 @@ otherwise the `failed` is called instead.
  - **path**: file path to display as view content, this file should be located in  `WWW` root folder.
  - **hasHead**: display over app head image which open the view up on click , by default true.
  - **dragToSide**: enable auto move of head to screen side after dragging stop , by default true.
- - **enableBackBtn**: enable hardware back button to close view , by default true.
+ - **enableBackBtn**: enable hardware back button to close view, by default true.
+   <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    should be disabled to be able to use keyboard. 
  - **enableCloseBtn**: whether to show native close btn or to hide it , by default true
  - **verticalPosition**: set vertical alignment of view , values are top - center - bottom , by default center. 
  - **horizontalPosition**: set horizontal alignment of view , values are right - center - left , by default center.

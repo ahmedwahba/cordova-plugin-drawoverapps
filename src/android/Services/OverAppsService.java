@@ -32,8 +32,6 @@ import android.widget.TextView;
 import org.apache.cordova.overApps.Services.ServiceParameters;
 import org.apache.cordova.overApps.GeneralUtils.KeyDispatchLayout;
 
-import com.ionicframework.overapp809848.R;
-
 
 import java.util.Date;
 
@@ -102,21 +100,23 @@ import java.util.Date;
                  WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                  PixelFormat.TRANSLUCENT);
          params_head_float.gravity = Gravity.CENTER_VERTICAL | Gravity.RIGHT;
-         params_head_view = new WindowManager.LayoutParams(
-                 WindowManager.LayoutParams.WRAP_CONTENT,
-                 WindowManager.LayoutParams.WRAP_CONTENT,
-                 WindowManager.LayoutParams.TYPE_PHONE,
-                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                 PixelFormat.TRANSLUCENT);
+         
+         params_head_view = new WindowManager.LayoutParams();
+         params_head_view.width = WindowManager.LayoutParams.WRAP_CONTENT;
+         params_head_view.height = WindowManager.LayoutParams.WRAP_CONTENT;
+         params_head_view.type = WindowManager.LayoutParams.TYPE_PHONE;
+         params_head_view.format = PixelFormat.TRANSLUCENT;
+                
          adjustWebViewGravity();
 
          Boolean has_head = serviceParameters.getBoolean("has_head",true);
+         final Boolean enable_hardware_back = serviceParameters.getBoolean("enable_hardware_back",true);
          if (has_head) {
            windowManager.addView(overAppsHead, params_head_float);
            showKeyDispatureVisibilty(false);
          }else {
            windowManager.addView(overAppsView, params_head_view);
-           Boolean enable_hardware_back = serviceParameters.getBoolean("enable_hardware_back",true);
+           
            showKeyDispatureVisibilty(enable_hardware_back);
          }
 
@@ -135,7 +135,7 @@ import java.util.Date;
                          windowManager.removeView(overAppsHead);
                          overAppsHead = null;
                          windowManager.addView(overAppsView, params_head_view);
-                         showKeyDispatureVisibilty(true);
+                         showKeyDispatureVisibilty(enable_hardware_back);
                          Log.d("TAG","Click");
                      }else {
                          switch (event.getAction()) {
@@ -250,7 +250,7 @@ import java.util.Date;
      public void webViewSettings() {
 
                webView.setBackgroundColor(Color.TRANSPARENT);
-               webView.addJavascriptInterface(new WebAppInterface(this), "OverApps");
+			         webView.addJavascriptInterface(new WebAppInterface(this), "OverApps");
                WebSettings webSettings = webView.getSettings();
                webSettings.setJavaScriptEnabled(true);
                webSettings.setAppCacheMaxSize(10 * 1024 * 1024); // 10MB
