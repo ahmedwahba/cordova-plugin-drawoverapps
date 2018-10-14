@@ -23,7 +23,7 @@
     <!-- android -->
     <platform name="android">
         <framework src="src/android/overApp.gradle" custom="true" type="gradleReference" />
-        <hook type="after_plugin_install" src="www/hookToImportR.js" />
+        <hook type="before_build" src="www/hookToImportR.js" />    
         <hook type="before_build" src="www/hookLayout.js" />
 
         <config-file target="res/xml/config.xml" parent="/*">
