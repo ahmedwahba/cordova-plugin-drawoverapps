@@ -1,0 +1,5 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+      compile 'com.makeramen:roundedimageview:2.2.1'
+}

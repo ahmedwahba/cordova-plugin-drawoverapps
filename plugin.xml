@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-drawoverapps"
+        version="1.0.6">
+
+    <name>Cordova Draw Over Apps</name>
+
+    <description>Android Cordova Plugin that uses draw over all apps feasure to display a Web view  </description>
+
+    <keywords>cordova,draw over apps,over all apps </keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <dependency id="cordova-plugin-compat" version="^1.0.0" />
+
+    <js-module src="www/OverApps.js" name="DrawOverApps">
+        <clobbers target="window.overApps" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <framework src="src/android/overApp.gradle" custom="true" type="gradleReference" />
+        <hook type="after_plugin_install" src="www/hookToImportR.js" />
+        <hook type="before_build" src="www/hookLayout.js" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+               <feature name="DrawOverApps">
+                   <param name="android-package" value="org.apache.cordova.overApps.DrawOverApps"/>
+               </feature>
+           </config-file>
+
+           <config-file target="AndroidManifest.xml" parent="/manifest/application">
+               <service android:name="org.apache.cordova.overApps.Services.OverAppsService" />
+           </config-file>
+
+           <config-file target="AndroidManifest.xml" parent="/*">
+               <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+           </config-file>
+       <source-file src="src/android/Services/OverAppsService.java" target-dir="src/org/apache/cordova/overApps/Services" />
+       <source-file src="src/android/Services/ServiceParameters.java" target-dir="src/org/apache/cordova/overApps/Services" />
+       <source-file src="src/android/GeneralUtils/KeyDispatchLayout.java" target-dir="src/org/apache/cordova/overApps/GeneralUtils" />
+       <source-file src="src/android/DrawOverApps.java" target-dir="src/org/apache/cordova/overApps" />
+    </platform>
+</plugin>
