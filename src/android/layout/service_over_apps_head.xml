@@ -13,6 +13,6 @@
         app:riv_border_width="1dp"
         app:riv_corner_radius="30dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/icon" />
+        android:src="@drawable/close" />
 
 </RelativeLayout>
