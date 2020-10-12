@@ -15,9 +15,6 @@ var filestocopy = [{ "plugins/cordova-plugin-drawoverapps/src/android/drawable/c
 var fs = require('fs');
 var path = require('path');
 
-// no need to configure below
-var rootdir = process.argv[2];
-
 filestocopy.forEach(function(obj) {
     Object.keys(obj).forEach(function(key) {
         var val = obj[key];
@@ -28,6 +25,7 @@ filestocopy.forEach(function(obj) {
         // create directory if not exists
         if (!fs.existsSync(destdir)){
             fs.mkdirSync(destdir);
+            console.log("- Directory :  "+ destdir +" created successfully");
         }
         var destdir = path.dirname(destfile);
         if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {

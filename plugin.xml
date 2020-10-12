@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-drawoverapps" 
-        version="1.0.6">
+        version="1.1.0">
     <name>Cordova Draw Over Apps</name>
 
     <description>Android Cordova Plugin that uses draw over all apps feasure to display a Web view  </description>
@@ -10,7 +10,8 @@
     <keywords>cordova,draw over apps,over all apps </keywords>
 
     <engines>
-        <engine name="cordova" version=">=3.0.0" />
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=6.4.0"/>
     </engines>
 
     <dependency id="cordova-plugin-compat" version="^1.0.0" />
