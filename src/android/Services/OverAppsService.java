@@ -9,6 +9,7 @@ import android.graphics.Point;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -45,6 +46,7 @@ import java.util.Date;
 
      private WindowManager windowManager;
      WindowManager.LayoutParams params_head_float,params_head_view,params_key_dispature;
+     private int layout_param_type;
      LayoutInflater inflater;
 
      private View overAppsHead,overAppsView;
@@ -93,10 +95,16 @@ import java.util.Date;
          });
          webViewSettings();
 
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {  
+            layout_param_type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+         } else {
+            layout_param_type = WindowManager.LayoutParams.TYPE_PHONE;
+         }
+
          params_head_float = new WindowManager.LayoutParams(
                  WindowManager.LayoutParams.WRAP_CONTENT,
                  WindowManager.LayoutParams.WRAP_CONTENT,
-                 WindowManager.LayoutParams.TYPE_PHONE,
+                 layout_param_type,
                  WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                  PixelFormat.TRANSLUCENT);
          params_head_float.gravity = Gravity.CENTER_VERTICAL | Gravity.RIGHT;
@@ -104,7 +112,7 @@ import java.util.Date;
          params_head_view = new WindowManager.LayoutParams();
          params_head_view.width = WindowManager.LayoutParams.WRAP_CONTENT;
          params_head_view.height = WindowManager.LayoutParams.WRAP_CONTENT;
-         params_head_view.type = WindowManager.LayoutParams.TYPE_PHONE;
+         params_head_view.type = layout_param_type;
          params_head_view.format = PixelFormat.TRANSLUCENT;
                 
          adjustWebViewGravity();
@@ -215,16 +223,15 @@ import java.util.Date;
              params_key_dispature = new WindowManager.LayoutParams(
                      WindowManager.LayoutParams.WRAP_CONTENT,
                      WindowManager.LayoutParams.WRAP_CONTENT,
-                     WindowManager.LayoutParams.TYPE_PHONE,
+                     layout_param_type,
                      WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                      PixelFormat.TRANSLUCENT);
              params_key_dispature.gravity = Gravity.CENTER;
 
              //This one is necessary.
-             params_key_dispature.type = WindowManager.LayoutParams.TYPE_PHONE;
+             params_key_dispature.type = layout_param_type;
              // Play around with these two.
              params_key_dispature.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-             //ll_lp.flags = ll_lp.flags | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
              try
              {
