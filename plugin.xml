@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-drawoverapps" 
-        version="1.1.0">
+        id="cordova-plugin-drawoverapps"
+        version="1.2.0">
     <name>Cordova Draw Over Apps</name>
 
     <description>Android Cordova Plugin that uses draw over all apps feasure to display a Web view  </description>
@@ -24,7 +24,6 @@
     <platform name="android">
         <framework src="src/android/overApp.gradle" custom="true" type="gradleReference" />
         <hook type="after_plugin_install" src="www/hookToImportR.js" />
-        <hook type="before_build" src="www/hookLayout.js" />
 
         <config-file target="res/xml/config.xml" parent="/*">
                <feature name="DrawOverApps">
@@ -43,5 +42,9 @@
        <source-file src="src/android/Services/ServiceParameters.java" target-dir="src/org/apache/cordova/overApps/Services" />
        <source-file src="src/android/GeneralUtils/KeyDispatchLayout.java" target-dir="src/org/apache/cordova/overApps/GeneralUtils" />
        <source-file src="src/android/DrawOverApps.java" target-dir="src/org/apache/cordova/overApps" />
+        <source-file src="src/android/drawable/close.png" target-dir="src/main/res/drawable" />
+        <source-file src="src/android/layout/service_over_apps_head.xml" target-dir="src/main/res/layout" />
+        <source-file src="src/android/layout/service_over_apps_view.xml" target-dir="src/main/res/layout" />
+        <source-file src="src/android/layout/key_dispature.xml" target-dir="src/main/res/layout" />
     </platform>
 </plugin>
