@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-drawoverapps",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "Android Cordova Plugin that uses draw over all apps feasure to display a Web view",
   "cordova": {
     "id": "cordova-plugin-drawoverapps",
